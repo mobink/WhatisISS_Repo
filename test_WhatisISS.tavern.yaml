@@ -1,0 +1,212 @@
+test_name: this is Test Suite for Satelite and tles of WhatisISS API responses
+
+stages:
+  - name: verify the satelite position
+    request:
+      url: "https://api.wheretheiss.at/v1/satellites/25544/positions?timestamps=1436029892"
+      method: GET
+      headers:
+        content-type: application/json
+    response:
+      save:
+        json:
+          id: 25544
+          name: "iss"
+          latitude: -24.870147579366
+          longitude: 17.59950771856
+          altitude: 253.41149587602
+          velocity: 17148.554081346
+          visibility: 'daylight'
+          footprint: 2761.996386827
+          timestamp: 1436029892
+          daynum: 2457208.2163426
+          solar_lat: 22.85465108118
+          solar_lon: 283.22043315343
+          units": "kilometers"
+
+  - name: verify the past date satelite position in miles
+    request:
+      url: "https://api.wheretheiss.at/v1/satellites/25544/positions?timestamps=1436029892&units=miles"
+      method: GET
+      headers:
+        content-type: application/json
+    response:
+      save:
+        json:
+          id: 25544
+          name: "iss"
+          latitude: -24.870147579366
+          longitude: 17.59950771856
+          altitude: 253.41149587602
+          velocity: 17148.554081346
+          visibility: 'daylight'
+          footprint: 2761.996386827
+          timestamp: 1436029892
+          daynum: 2457208.2163426
+          solar_lat: 22.85465108118
+          solar_lon: 283.22043315343
+          units": "miles"
+
+  - name: verify the past date satelite position in kilometer
+    request:
+      url: "https://api.wheretheiss.at/v1/satellites/25544/positions?timestamps=1436029892&units=km"
+      method: GET
+      headers:
+        content-type: application/json
+    response:
+      save:
+        json:
+          id: 25544
+          name: "iss"
+          latitude: -24.870147579366
+          longitude: 17.59950771856
+          altitude: 253.41149587602
+          velocity: 17148.554081346
+          visibility: 'daylight'
+          footprint: 2761.996386827
+          timestamp: 1436029892
+          daynum: 2457208.2163426
+          solar_lat: 22.85465108118
+          solar_lon: 283.22043315343
+          units": "kilometers"
+
+  - name: verify the current date satelite position in miles
+    request:
+      url: "https://api.wheretheiss.at/v1/satellites/25544/positions?timestamps=1645680941&units=miles"
+      method: GET
+      headers:
+        content-type: application/json
+    response:
+      save:
+        json:
+          id: 25544
+          name: "iss"
+          latitude: 33.124666491368
+          longitude: 87.052747746093
+          altitude: 415.62579144625
+          velocity: 27605.011762092
+          visibility: 'daylight'
+          footprint: 4485.1421626642
+          timestamp: 1645680941
+          daynum: 2459634.7331134
+          solar_lat: -9.4606160332056
+          solar_lon: 99.389319384371
+          units": "miles"
+
+  - name: verify the current date satelite position in kilometer
+    request:
+      url: "https://api.wheretheiss.at/v1/satellites/25544/positions?timestamps=1645680941&units=km"
+      method: GET
+      headers:
+        content-type: application/json
+    response:
+      save:
+        json:
+          id: 25544
+          name: "iss"
+          latitude: 33.124666491368
+          longitude: 87.052747746093
+          altitude: 415.62579144625
+          velocity: 27605.011762092
+          visibility: 'daylight'
+          footprint: 4485.1421626642
+          timestamp: 1645680941
+          daynum: 2459634.7331134
+          solar_lat: -9.4606160332056
+          solar_lon: 99.389319384371
+          units": "kilometers"
+
+  - name: verify the future date satelite position in miles
+    request:
+      url: "https://api.wheretheiss.at/v1/satellites/25544/positions?timestamps=1648100780&units=miles"
+      method: GET
+      headers:
+        content-type: application/json
+    response:
+      save:
+        json:
+          id: 25544
+          name: "iss"
+          latitude: -45.781020470859
+          longitude: 74.870682304532
+          altitude: 265.86587083465
+          velocity: 17126.80650717
+          visibility: 'daylight'
+          footprint: 2825.5520124543
+          timestamp: 1648100780
+          daynum: 2459662.7405093
+          solar_lat: 1.4217858890199
+          solar_lon: 95.008551548583
+          units": "miles"
+
+  - name: verify the future date satelite position in kilometer
+    request:
+      url: "https://api.wheretheiss.at/v1/satellites/25544/positions?timestamps=1648100780&units=km"
+      method: GET
+      headers:
+        content-type: application/json
+    response:
+      save:
+        json:
+          id: 25544
+          name: "iss"
+          latitude: -45.781020470859
+          longitude: 74.870682304532
+          altitude: 265.86587083465
+          velocity: 17126.80650717
+          visibility: 'daylight'
+          footprint: 2825.5520124543
+          timestamp: 1648100780
+          daynum: 2459662.7405093
+          solar_lat: 1.4217858890199
+          solar_lon: 95.008551548583
+          units": "km"
+
+  - name: verify the future date for multiple satelite positions in kilometer
+    request:
+      url: "https://api.wheretheiss.at/v1/satellites/25544/positions?timestamps=1648100780,1648111580&units=km"
+      method: GET
+      headers:
+        content-type: application/json
+    response:
+      save:
+        json:
+          id: 25544
+          name: "iss"
+          latitude: -45.781020470859
+          longitude: 74.870682304532
+          altitude: 265.86587083465
+          velocity: 17126.80650717
+          visibility: 'daylight'
+          footprint: 2825.5520124543
+          timestamp: 1648100780
+          daynum: 2459662.7405093
+          solar_lat: 1.4217858890199
+          solar_lon: 95.008551548583
+          units": "km"
+
+  - name: Get all tle data in JSON
+    request:
+      url: "https://api.wheretheiss.at/v1/satellites/25544/tles"
+      method: GET
+      headers:
+        content-type: application/json
+    response:
+      save:
+        json:
+          requested_timestamp: 1364084064
+          tle_timestamp: 1645590629
+          id: 25544
+          name: "iss"
+          header: "ISS (ZARYA)"
+          line1: "1 25544U 98067A   22054.18783655  .00007109  00000+0  13284-3 0  9993"
+          line2: "2 25544  51.6413 181.1372 0005500 156.8593 262.9721 15.49907271327503"
+
+  - name: Get all tle data in text format
+    request:
+      url: "https://api.wheretheiss.at/v1/satellites/25544/tles?format=text"
+      method: GET
+      headers:
+        content-type: application/json
+    response:
+      status_code: 200
