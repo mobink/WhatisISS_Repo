@@ -1,17 +1,13 @@
-**Framework Overview**
 
-tavern-pytest API Automation and Integration automation test framework for evaluating the Ask Eva API's.
-This framework uses two of the most common framework available in python called Tavern(YAML based API test automation) and Pytest(simplified and easy to use unit test plugin).
+**Restful API testing using Tavern Framework**
 
+Tavern-pytest API Automation and Integration automation test framework. Tavern is a pytest plugin, command-line tool and Python library for automated testing of RESTful APIs, with a simple, concise and flexible YAML-based syntax. It's very simple to get started, and highly customisable for complex tests.
 
-**Restful API testing**
+The best way to use Tavern is with pytest. Tavern comes with a pytest plugin so that literally all you have to do is install pytest and Tavern, write your tests in .tavern.yaml files and run pytest. This means you get access to all of the pytest ecosystem and allows you to do all sorts of things like regularly run your tests against a test server and report failures or generate HTML reports.
 
-Tavern is a pytest plugin, command-line tool and Python library for automated testing of RESTful APIs, with a simple, concise and flexible YAML-based syntax. It's very simple to get started, and highly
-customisable for complex tests.
-The best way to use Tavern is with pytest. Tavern comes with a pytest plugin so that literally all you have to do is install pytest and Tavern, write your tests in .tavern.yaml files and run pytest. This
-means you get access to all of the pytest ecosystem and allows you to do all sorts of things like regularly run your tests against a test server and report failures or generate HTML reports.
 You can also integrate Tavern into your own test framework or continuous integration setup using the Python library, or use the command line tool, tavern-ci with bash scripts and cron jobs.
 
+https://tavern.readthedocs.io/en/latest/
 
 **Quickstart**
 
